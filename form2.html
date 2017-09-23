@@ -10,6 +10,9 @@
         </script>
 	</head>
 	<body>
+<p id="test">input here
+</p>
+
 		<form action="" method="post" target="nm_iframe"> 
         <table class="formdata"> 
         <caption>Weekly Calender</caption> 
@@ -166,7 +169,7 @@
                 <tr> 
                <th scope="row">22:00</th>  
                <td><input type="text" name="Monday" id="Monday"/></td> 
-               <td><input type="text" name="Tuesday" id="Tuesday"/></td> 
+               <td><p id="Tue22"> nothing scheduled </p></td> 
                <td><input type="text" name="Wensday" id="Wensday"/></td> 
                <td><input type="text" name="Thursday" id="Thursday"/></td> 
                <td><input type="text" name="Friday" id="Friday"/></td> 
@@ -189,5 +192,18 @@
         <input type="reset" value="cancel" name="reset" />
         </form> 
         <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
+
+<p id="demo">
+Click to update calendar
+</p>
+<script>
+document.getElementById("demo").onclick = function() {myFunction()};
+
+function myFunction() {
+    document.getElementById("Tue22").innerHTML = "userinput!";
+}
+</script>
+</script>
+	
 	</body>
 </html>

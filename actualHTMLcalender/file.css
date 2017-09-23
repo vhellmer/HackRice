@@ -1,0 +1,65 @@
+body {
+	background-color: #F8AF00;
+}
+
+
+@font-face { font-family: Amatic;
+			src: url('amaticsc-regular.ttf'); 
+			} 
+ 
+ 
+@font-face { font-family: Amatic; font-weight: bold; src: url('Amatic-Bold.ttf');}
+ 
+ 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+	overflow: hidden;
+    background-color: #725000;
+}
+
+li {
+    float: left;
+}
+
+
+li a {
+    display: block;
+    color: #FFD97E;
+	font-size: 150%;
+    text-align: center;
+    padding: 15px 35px;
+    text-decoration: none;
+	font-family: Amatic;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+
+
+h1 {
+	font-family: Amatic;
+	color: black;
+	font-size: 420%
+}
+
+h2 {
+	font-size: 300%;
+	font-family: Georgia;
+	
+}
+
+
+div {
+   word-wrap: break-word;
+   width: 800px;
+}
+
+p {
+    float: center;
+	font-family: Georgia;
+	
+}

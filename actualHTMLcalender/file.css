@@ -1,65 +1,37 @@
 body {
-	background-color: #F8AF00;
+	background-color: #F8F8F8;
+	font-size: 18px;
+	font-family: Concourse;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 70%;
+}
+
+table th,tr,td{
+	height: 30px;
+}
+
+tr {
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover{background-color:#f5f5f5}
+
+body th{
+	font-family:Equity;
 }
 
 
-@font-face { font-family: Amatic;
-			src: url('amaticsc-regular.ttf'); 
+@font-face { font-family: Concourse;
+			src: url('Concourse T2 Regular.otf'); 
 			} 
  
  
-@font-face { font-family: Amatic; font-weight: bold; src: url('Amatic-Bold.ttf');}
- 
- 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-	overflow: hidden;
-    background-color: #725000;
-}
+@font-face { font-family: Concourse; font-weight: bold; src: url('Concourse T2 Bold.otf');}
 
-li {
-    float: left;
-}
-
-
-li a {
-    display: block;
-    color: #FFD97E;
-	font-size: 150%;
-    text-align: center;
-    padding: 15px 35px;
-    text-decoration: none;
-	font-family: Amatic;
-}
-
-li a:hover {
-    background-color: #111;
-}
-
-
-
-h1 {
-	font-family: Amatic;
-	color: black;
-	font-size: 420%
-}
-
-h2 {
-	font-size: 300%;
-	font-family: Georgia;
-	
-}
-
-
-div {
-   word-wrap: break-word;
-   width: 800px;
-}
-
-p {
-    float: center;
-	font-family: Georgia;
-	
-}
+@font-face {font-family: Equity;
+	       src: url('Equity Text B Bold.otf');

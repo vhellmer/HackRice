@@ -1,0 +1,349 @@
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="file.css">
+		<title>
+			Form
+		</title>
+		<script type="text/javascript" >
+            
+        </script>
+	</head>
+	<body>
+
+<script type="text/javascript" src="pw.js"></script>
+<script language="JavaScript1.2">
+<!-- Begin
+
+
+
+var no = 25; // image number or falling rate
+var speed = 2; // the lower the number the faster the image moves
+var snow = new Array();
+snow[0] = "doge.jpg"
+snow[1] = "doge.jpg"
+snow[2] = "doge.jpg"
+
+var ns4up = (document.layers) ? 1 : 0;  // browser sniffer
+var ie4up = (document.all) ? 1 : 0;
+var ns6up = (document.getElementById&&!document.all) ? 1 : 0;
+var dx, xp, yp;    // coordinate and position variables
+var am, stx, sty;  // amplitude and step variables
+var i, doc_width = 800, doc_height = 1800;
+
+if (ns4up||ns6up) {
+        doc_width = self.innerWidth;
+        doc_height = self.innerHeight;
+} else if (ie4up) {
+        doc_width = document.body.clientWidth;
+        doc_height = document.body.clientHeight;
+}
+
+dx = new Array();
+xp = new Array();
+yp = new Array();
+am = new Array();
+stx = new Array();
+sty = new Array();
+j = 0;
+
+for (i = 0; i < no; ++ i) {
+        dx[i] = 0;                        // set coordinate variables
+        xp[i] = Math.random()*(doc_width-50);  // set position variables
+        yp[i] = Math.random()*doc_height;
+        am[i] = Math.random()*20;         // set amplitude variables
+        stx[i] = 0.02 + Math.random()/10; // set step variables
+        sty[i] = 0.7 + Math.random();     // set step variables
+        if (ns4up) {                      // set layers
+                if (i == 0) {
+                        document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><img src=\""+ snow[j] + "\" border=\"0\"></layer>");
+                } else {
+                        document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><img src=\""+ snow[j] + "\" border=\"0\"></layer>");
+                }        } else if (ie4up||ns6up) {                if (i == 0) 
+{
+                        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\"><img src=\"" + snow[j] + "\" border=\"0\"></div>");
+                } else {
+                        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\"><img src=\"" + snow[j] + "\" border=\"0\"></div>");
+                }
+        }
+        if (j == (snow.length-1)) { j = 0; } else { j += 1; }
+}
+
+function snowNS() {  // Netscape main animation function
+        for (i = 0; i < no; ++ i) {  // iterate for every dot
+                yp[i] -= sty[i];                if (yp[i] < -50) {
+                        xp[i] = Math.random()*(doc_width-am[i]-30);
+                        yp[i] = doc_height;
+                        stx[i] = 0.02 + Math.random()/10;
+                        sty[i] = 0.7 + Math.random();
+                        doc_width = self.innerWidth;
+                        doc_height = self.innerHeight;                }
+                dx[i] += stx[i];
+                document.layers["dot"+i].top = yp[i]+pageYOffset;
+                document.layers["dot"+i].left = xp[i] + 
+am[i]*Math.sin(dx[i]);
+        }
+        setTimeout("snowNS()", speed);
+}
+
+function snowIE_NS6() {  // IE main animation function
+        for (i = 0; i < no; ++ i) {  // iterate for every dot
+                yp[i] -= sty[i];
+                if (yp[i] < -50) {
+                        xp[i] = Math.random()*(doc_width-am[i]-30);
+                        yp[i] = doc_height;
+                        stx[i] = 0.02 + Math.random()/10;
+                        sty[i] = 0.7 + Math.random();
+                        doc_width = ns6up?window.innerWidth-5:document.body.clientWidth;
+                        doc_height = ns6up?window.innerHeight-5:document.body.clientHeight;
+                }
+                dx[i] += stx[i];
+                if (ie4up){
+                document.all["dot"+i].style.pixelTop = yp[i]+document.body.scrollTop;
+                document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
+                }
+                else if (ns6up){
+                document.getElementById("dot"+i).style.top=yp[i]+pageYOffset;
+                document.getElementById("dot"+i).style.left=xp[i] + am[i]*Math.sin(dx[i]);
+                }
+        }
+        setTimeout("snowIE_NS6()", speed);
+}
+
+if (ns4up) {
+        snowNS();
+} else if (ie4up||ns6up) {
+        snowIE_NS6();
+}
+// End -->
+</script>
+
+
+		<form action="" method="post" target="nm_iframe"> 
+        <table class="formdata"> 
+
+
+        <caption>Weekly Calender</caption> 
+        <tr> 
+        <th></th> 
+        <th scope="col">Monday</th> 
+        <th scope="col">Tuesday</th> 
+        <th scope="col">Wednesday</th> 
+        <th scope="col">Thursday</th> 
+        <th scope="col">Friday</th>
+        <th scope="col">Saturday</th>
+        <th scope="col">Sunday</th>
+        </tr> 
+        <tr> 
+          <th scope="row">8:00</th>  
+          <td><p id="Mon8"> </p></td>
+          <td><p id="Tue8"> </p></td>
+          <td><p id="Wed8"> </p></td>
+          <td><p id="Thu8"> </p></td>
+          <td><p id="Fri8"> </p></td>
+          <td><p id="Sat8"> </p></td>
+          <td><p id="Sun8"> </p></td>
+        </tr> 
+        <tr> 
+          <th scope="row">9:00</th>  
+          <td><p id="Mon9"> </p></td>
+          <td><p id="Tue9"> </p></td>
+          <td><p id="Wed9"> </p></td>
+          <td><p id="Thu9"> </p></td>
+          <td><p id="Fri9"> </p></td>
+          <td><p id="Sat9"> </p></td>
+          <td><p id="Sun9"> </p></td>
+        </tr> 
+        <tr> 
+          <th scope="row">10:00</th>  
+          <td><p id="Mon10"> </p></td>
+          <td><p id="Tue10"> </p></td>
+          <td><p id="Wed10"> </p></td>
+          <td><p id="Thu10"> </p></td>
+          <td><p id="Fri10"> </p></td>
+          <td><p id="Sat10"> </p></td>
+          <td><p id="Sun10"> </p></td>     
+        </tr> 
+        <tr> 
+          <th scope="row">11:00</th>  
+          <td><p id="Mon11"> </p></td>
+          <td><p id="Tue11"> </p></td>
+          <td><p id="Wed11"> </p></td>
+          <td><p id="Thu11"> </p></td>
+          <td><p id="Fri11"> </p></td>
+          <td><p id="Sat11"> </p></td>
+          <td><p id="Sun11"> </p></td>     
+        </tr> 
+        <tr> 
+          <th scope="row">12:00</th>  
+          <td><p id="Mon12"> </p></td>
+          <td><p id="Tue12"> </p></td>
+          <td><p id="Wed12"> </p></td>
+          <td><p id="Thu12"> </p></td>
+          <td><p id="Fri12"> </p></td>
+          <td><p id="Sat12"> </p></td>
+          <td><p id="Sun12"> </p></td>          
+        </tr> 
+        <tr> 
+          <th scope="row">13:00</th>  
+          <td><p id="Mon13"> </p></td>
+          <td><p id="Tue13"> </p></td>
+          <td><p id="Wed13"> </p></td>
+          <td><p id="Thu13"> </p></td>
+          <td><p id="Fri13"> </p></td>
+          <td><p id="Sat13"> </p></td>
+          <td><p id="Sun13"> </p></td>          
+        </tr>       
+        <tr> 
+          <th scope="row">14:00</th>  
+          <td><p id="Mon14"> </p></td>
+          <td><p id="Tue14"> </p></td>
+          <td><p id="Wed14"> </p></td>
+          <td><p id="Thu14"> </p></td>
+          <td><p id="Fri14"> </p></td>
+          <td><p id="Sat14"> </p></td>
+          <td><p id="Sun14"> </p></td>                
+        </tr>
+        <tr> 
+          <th scope="row">15:00</th>  
+          <td><p id="Mon15"> </p></td>
+          <td><p id="Tue15"> </p></td>
+          <td><p id="Wed15"> </p></td>
+          <td><p id="Thu15"> </p></td>
+          <td><p id="Fri15"> </p></td>
+          <td><p id="Sat15"> </p></td>
+          <td><p id="Sun15"> </p></td>                
+        </tr> 
+        <tr> 
+          <th scope="row">16:00</th>  
+          <td><p id="Mon16"> </p></td>
+          <td><p id="Tue16"> </p></td>
+          <td><p id="Wed16"> </p></td>
+          <td><p id="Thu16"> </p></td>
+          <td><p id="Fri16"> </p></td>
+          <td><p id="Sat16"> </p></td>
+          <td><p id="Sun16"> </p></td>                
+        </tr> 
+        <tr> 
+          <th scope="row">17:00</th>  
+          <td><p id="Mon17"> </p></td>
+          <td><p id="Tue17"> </p></td>
+          <td><p id="Wed17"> </p></td>
+          <td><p id="Thu17"> </p></td>
+          <td><p id="Fri17"> </p></td>
+          <td><p id="Sat17"> </p></td>
+          <td><p id="Sun17"> </p></td>                
+        </tr> 
+        <tr> 
+          <th scope="row">18:00</th>  
+          <td><p id="Mon18"> </p></td>
+          <td><p id="Tue18"> </p></td>
+          <td><p id="Wed18"> </p></td>
+          <td><p id="Thu18"> </p></td>
+          <td><p id="Fri18"> </p></td>
+          <td><p id="Sat18"> </p></td>
+          <td><p id="Sun18"> </p></td>                
+        </tr> 
+        <tr> 
+          <th scope="row">19:00</th>  
+          <td><p id="Mon19"> </p></td>
+          <td><p id="Tue19"> </p></td>
+          <td><p id="Wed19"> </p></td>
+          <td><p id="Thu19"> </p></td>
+          <td><p id="Fri19"> </p></td>
+          <td><p id="Sat19"> </p></td>
+          <td><p id="Sun19"> </p></td>                
+        </tr>
+        <tr> 
+          <th scope="row">20:00</th>  
+          <td><p id="Mon20"> </p></td>
+          <td><p id="Tue20"> </p></td>
+          <td><p id="Wed20"> </p></td>
+          <td><p id="Thu20"> </p></td>
+          <td><p id="Fri20"> </p></td>
+          <td><p id="Sat20"> </p></td>
+          <td><p id="Sun20"> </p></td>                
+        </tr> 
+         <tr> 
+          <th scope="row">21:00</th>  
+          <td><p id="Mon21"> </p></td>
+          <td><p id="Tue21"> </p></td>
+          <td><p id="Wed21"> </p></td>
+          <td><p id="Thu21"> </p></td>
+          <td><p id="Fri21"> </p></td>
+          <td><p id="Sat21"> </p></td>
+          <td><p id="Sun21"> </p></td>                
+        </tr> 
+         <tr> 
+          <th scope="row">22:00</th>  
+          <td><p id="Mon22"> </p></td>
+          <td><p id="Tue22"> </p></td>
+          <td><p id="Wed22"> </p></td>
+          <td><p id="Thu22"> </p></td>
+          <td><p id="Fri22"> </p></td>
+          <td><p id="Sat22"> </p></td>
+          <td><p id="Sun22"> </p></td>                
+        </tr> 
+         <tr> 
+          <th scope="row">23:00</th>  
+          <td><p id="Mon23"> </p></td>
+          <td><p id="Tue23"> </p></td>
+          <td><p id="Wed23"> </p></td>
+          <td><p id="Thu23"> </p></td>
+          <td><p id="Fri23"> </p></td>
+          <td><p id="Sat23"> </p></td>
+          <td><p id="Sun23"> </p></td>                
+        </tr>  
+        
+        </table>  
+
+
+
+ <tr>
+    <td>New Event: </td>
+	<td><input type="text" name="event" id="event"></td>
+  <select id="day">
+        <option value="Mon">Mon</option>
+        <option value="Tue">Tue</option>
+        <option value="Wed">Wed</option>
+        <option value="Thu">Thu</option>
+        <option value="Fri">Fri</option>
+        <option value="Sat">Sat</option>
+        <option value="Sun">Sun</option>
+    </select> 
+  <select id="time">
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+    </select>
+  </td>
+</tr>
+<tr>
+  <td><button onclick="new_event()">Submit</button></td>
+  <td><button onclick="cancel_event()">Cancel</button></td>
+</tr>
+
+
+
+ </form> 
+        <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
+
+
+
+
+
+
+</html>

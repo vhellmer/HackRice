@@ -1,4 +1,28 @@
 body {
 	background-color: #66CCFF;
-	font-size: 18px; color:#000000
+	background-image:url("https://wallpapertag.com/wallpaper/full/4/2/e/150355-doge-background-1920x1080-lockscreen.jpg");
+	font-size: 18px;
+	font-family: Comic Sans MS;
+	cursor:url("dogecursor.jpg"), auto;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 70%;
+}
+
+table th,tr,td{
+	height: 30px;
+}
+
+tr {
+    text-align: left;
+    border-bottom: 1px solid #000000;
+}
+
+tr:hover{background-color:#F5F5F5}
+
+body th{
+	font-family:Comic Sans MS;
 }

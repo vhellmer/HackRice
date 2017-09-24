@@ -18,22 +18,11 @@ table th,tr,td{
 
 tr {
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #000000;
 }
 
 tr:hover{background-color:#F5F5F5}
 
 body th{
-	font-family:Equity;
+	font-family:Comic Sans MS;
 }
-
-
-@font-face { font-family: Concourse;
-			src: url('Concourse T2 Regular.otf'); 
-			} 
- 
- 
-@font-face { font-family: Concourse; font-weight: bold; src: url('Concourse T2 Bold.otf');}
-
-@font-face {font-family: Equity;
-	       src: url('Equity Text B Bold.otf');
